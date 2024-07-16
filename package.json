@@ -1,0 +1,20 @@
+{
+  "name": "resumidor",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "permite resumir canales de discord",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@ai-sdk/google": "^0.0.27",
+    "ai": "^3.2.22",
+    "dotenv": "^16.4.5",
+    "node-fetch": "^3.3.2",
+    "readline-sync": "^1.4.10"
+  }
+}
