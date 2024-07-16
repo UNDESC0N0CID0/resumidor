@@ -1,5 +1,5 @@
-```markdown
-# Discord Summary Bot
+
+# Discord Summary
 
 Este proyecto es un bot para Discord que permite resumir mensajes de un servidor de Discord utilizando la API generativa de Google Gemini.
 
@@ -15,9 +15,9 @@ Este proyecto es un bot para Discord que permite resumir mensajes de un servidor
 1. Clona este repositorio en tu máquina local:
 
 ```bash
-git clone https://github.com/tu-usuario/discord-summary-bot.git
+
+git clone https://github.com/UNDESC0N0CID0/resumidor.git
 cd discord-summary-bot
-```
 
 2. Instala las dependencias del proyecto:
 
@@ -39,6 +39,12 @@ Para ejecutar el bot, utiliza el siguiente comando:
 ```bash
 node index.js
 ```
+
+## Funcionamiento
+
+https://github.com/user-attachments/assets/f8041b73-84d2-404c-839a-5515b56496e3
+
+
 
 El bot te guiará a través de los siguientes pasos:
 
@@ -100,5 +106,18 @@ Permite al usuario especificar la cantidad de mensajes a resumir y el tipo de re
 ## Notas
 
 - Asegúrate de que tu token de Discord y la API key de Google Gemini sean válidos y tengan los permisos necesarios.
-- Puedes modificar las funciones para adaptarlas a tus necesidades específicas.
-```
+
+## ¿Cómo obtener tu token de sesión de Discord?
+
+Abre tu navegador web.
+Inicia sesión en tu cuenta de Discord.
+Abre las Herramientas de Desarrollador (DevTools) del navegador.
+Ve a la pestaña "Network" (Red).
+Busca una petición XHR en la lista de solicitudes.
+Selecciona la petición y ve a la pestaña "Headers" (Cabeceras).
+Busca la clave llamada "Authorization".
+El valor asociado a esta clave es tu token de Discord.
+
+Este token sirve para autenticar el script como si fuera tu cuenta.
+
+![image](https://github.com/user-attachments/assets/f6c55887-d20a-40b8-9b85-5cce42e83d4a)
