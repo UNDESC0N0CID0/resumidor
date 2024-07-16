@@ -106,8 +106,8 @@ Permite al usuario especificar la cantidad de mensajes a resumir y el tipo de re
 ## Notas
 
 - Asegúrate de que tu token de Discord y la API key de Google Gemini sean válidos y tengan los permisos necesarios.
-```
-¿Cómo obtener tu token de sesión de Discord?
+
+## ¿Cómo obtener tu token de sesión de Discord?
 
 Abre tu navegador web.
 Inicia sesión en tu cuenta de Discord.
@@ -119,5 +119,5 @@ Busca la clave llamada "Authorization".
 El valor asociado a esta clave es tu token de Discord.
 
 Este token sirve para autenticar el script como si fuera tu cuenta.
-  
+
 ![image](https://github.com/user-attachments/assets/f6c55887-d20a-40b8-9b85-5cce42e83d4a)
