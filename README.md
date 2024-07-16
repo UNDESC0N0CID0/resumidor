@@ -1,7 +1,7 @@
 
 # Discord Summary
 
-Este proyecto es un bot para Discord que permite resumir mensajes de un servidor de Discord utilizando la API generativa de Google Gemini.
+Este proyecto permite resumir mensajes de un servidor de Discord utilizando la API generativa de Google Gemini.
 
 ## Requisitos
 
