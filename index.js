@@ -80,6 +80,7 @@ async function esperarYMostrarMensaje() {
 }
 
 async function getMessagesBefore(channelID, messageID, limit) {
+    await esperarYMostrarMensaje();
     limit = (limit > 1 && limit < 100) ? limit : 100;
     try {
         const response = await fetch(`https://discord.com/api/v9/channels/${channelID}/messages?before=${messageID}&limit=${limit}`, {
@@ -93,8 +94,6 @@ async function getMessagesBefore(channelID, messageID, limit) {
         console.error('Ocurrió un error inesperado al intentar obtener los mensajes. Por favor, verifica tu token de Discord e inténtalo nuevamente.');
         process.exit(1); // Cierra el programa con un código de salida que indica error
     }
-    esperarYMostrarMensaje();
-
 }
 
 async function getMessages(channelID, limit) {
@@ -124,12 +123,12 @@ function calculateRequestsNeeded(totalMessages) {
 async function getRequestedMessagesCount(channelID, totalMessages) {
     const totalRequests = calculateRequestsNeeded(totalMessages);
     let messages = await getMessages(channelID, 100);
-    let lastObjectId = messages[messages.length - 1].id;
+    let lastObjectId = messages[messages.length - 1]?.id;
     for (let i = 0; i < totalRequests; i++) {
         const messagesToFetch = (i === totalRequests - 1 && totalMessages % 100 !== 0) ? totalMessages % 100 : 100;
         console.log(`Realizando solicitud ${i + 1} para ${messagesToFetch} mensajes.`);
         const lastMessages = await getMessagesBefore(channelID, lastObjectId, 100);
-        lastObjectId = lastMessages[lastMessages.length - 1].id;
+        lastObjectId = lastMessages[lastMessages.length - 1]?.id;
         messages = messages.concat(lastMessages);
     }
     return messages;
@@ -172,7 +171,7 @@ function customiseResumen(channelID) {
     console.log(`Resumiendo ${cantidad} mensajes con el tipo de resumen ${tipo}.`);
     getRequestedMessagesCount(channelID, cantidad).then((messages) => {
         const simplifiedMessages = messages.map(({ author, content }) => ({
-            username: author.username,
+            username: author?.username,
             content
         }));
         resumen(JSON.stringify(simplifiedMessages), tipo);
